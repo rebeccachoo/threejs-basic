@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-const Box = () => {
+const Sphere = () => {
   // reference will give us direct access to the mesh
   const ref = useRef();
 
@@ -9,12 +9,7 @@ const Box = () => {
     ref.current.rotation.x += 0.01;
     ref.current.rotation.y += 0.01;
   });
-  return (
-    <mesh ref={ref}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="orange" />
-    </mesh>
-  );
+  return <mesh ref={ref} geometry={"sphere"} material={"red"} />;
 };
 
-export default Box;
+export default Sphere;
